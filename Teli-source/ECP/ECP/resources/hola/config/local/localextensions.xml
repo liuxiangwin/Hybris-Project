@@ -1,0 +1,65 @@
+<hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='../bin/platform/resources/schemas/extensions.xsd'>
+	<extensions>
+		<path dir='${HYBRIS_BIN_DIR}' autoload='false' />
+		<extension name='mcc' />
+		<extension name='backoffice' />
+		<extension name='commercesearchbackoffice' />
+		<extension name='assistedservicefacades' />
+		<extension name='assistedservicestorefront' />
+		
+		<!-- <extension name="commercefacades" />
+        <extension name="commercewebservicescommons" /> -->
+		
+
+		<!-- <extension name='yaddon' /> 
+		<extension name='yacceleratorcockpits'/> 
+		<extension name='yacceleratorinitialdata'/> 
+		<extension name='yacceleratorstorefront'/>
+		<extension name='ycommercewebservices' /> 
+		<extension name='electronicsstore'/>
+		<extension name='apparelstore' />
+		<extension name='acceleratorwebservicesaddon' /> -->
+		
+		 <!-- ext-data -->
+		<extension name="commercesearchsampledata" />
+		<extension name="electronicsstore" />
+		<extension name="b2bacceleratorsampledata" />
+		<extension name="instoresampledata" />
+		
+		 <!-- ext-content -->
+        <extension name="productcockpit" />
+        <extension name="cms2" />
+        <extension name="cms2lib" />
+        <extension name="cmscockpit" />
+        <extension name="bmecat" />
+        <extension name="bmecathmc" />
+        <extension name="importcockpit" />
+        <extension name="classificationsystems" />
+        <extension name="classificationsystemshmc" />
+		
+		<extension name="yb2bacceleratorcore" /> 
+		<extension name="yb2bacceleratorfacades" /> 
+		<extension name="yb2bacceleratorinitialdata" />
+		<extension name="yb2bacceleratorstorefront" /> 
+		<extension name="yb2bacceleratortest" /> 
+
+ 
+		<!-- ext-addon -->
+        <extension name="addonsupport" />
+		<extension name='b2ccheckoutaddon' />
+		<!-- <extension name='liveeditaddon' /> -->
+
+		<!-- TestRite's modules -->
+		<!-- <extension name='testritetest' /> -->
+		
+		<extension name='testritecockpits' />
+		<extension name='testritefulfilmentprocess' />
+		<extension name='testritecore' />
+		<extension name='holafacades' />
+		<extension name='testritestorefrontcommons' />
+		<extension name='holastorefront' />
+		<extension name='holainitialdata' />
+
+	</extensions>
+</hybrisconfig>

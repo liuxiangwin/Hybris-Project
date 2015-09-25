@@ -1,0 +1,17 @@
+# ImpEx for Importing Product Backend Info
+
+# Macros / Replacement Parameter definitions
+$productCatalog=tlwProductCatalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
+$unit=unit(code[unit=true,default=pieces])
+
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+
+$lang=zh_TW
+
+#INSERT_UPDATE ECPBackendInformation;code[unique=true];$product;name[lang=$lang];skuType;standardPackageType;negativeProfit;status;reasonCode;productDimension;packageDimension;$catalogVersion
+INSERT_UPDATE ECPBackendInformation;productCode[unique=true];name[lang=$lang];skuType;standardPackageType;negativeProfit;status;reasonCode;$catalogVersion
+;339;"魯賓遜窗簾針(大)12入裝";01;24;false;y;;"12.400x1.400x8.900";"45.000x45.000x28.000"
+
