@@ -114,6 +114,11 @@ public class BrandCategoryPageController extends AbstractCategoryPageController
 
 	}
 
+	/**
+	 * Add some parameter
+	 * 
+	 * @param code
+	 */
 	private void getStadiumData(final String code)
 	{
 		stadiumFacade.getStadiums(code);
