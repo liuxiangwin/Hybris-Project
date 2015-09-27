@@ -47,14 +47,12 @@ public class DefaultProductSearchService implements ProductSearchService
 	@Override
 	public ProductModel getStadiumForCode(final String code)
 	{
-		// YTODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String getImageUrlFromStadium(final ProductModel stadium, final String format)
 	{
-		// YTODO Auto-generated method stub
 		return null;
 	}
 
