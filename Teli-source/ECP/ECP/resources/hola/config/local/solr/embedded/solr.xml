@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <solr persistent="true" sharedLib="hybris">
   <cores adminPath="/admin/cores">
-    <core name="master_electronics_Product" instanceDir="D:\Project\Teli-project\Teli-instance-5-6\hybris\config/solr/embedded" dataDir="D:\Project\Teli-project\Teli-instance-5-6\hybris\data\solrfacetsearch\MASTER\electronics_Product_1"/>
+    <core name="master_electronics_Product" instanceDir="D:\Project\Teli-project\Teli-instance-5-6\hybris\config/solr/embedded" dataDir="D:\Project\Teli-project\Teli-instance-5-6\hybris\data\solrfacetsearch\MASTER\electronics_Product"/>
 
-    <core name="master_electronics_Product_1" instanceDir="D:\Project\Teli-project\Teli-instance-5-6\hybris\config/solr/embedded" dataDir="D:\Project\Teli-project\Teli-instance-5-6\hybris\data\solrfacetsearch\MASTER\electronics_Product"/>
+    <core name="master_electronics_Product_1" instanceDir="D:\Project\Teli-project\Teli-instance-5-6\hybris\config/solr/embedded" dataDir="D:\Project\Teli-project\Teli-instance-5-6\hybris\data\solrfacetsearch\MASTER\electronics_Product_1"/>
 
     <core name="master_powertools_Product" instanceDir="D:\Project\Teli-project\Teli-instance-5-6\hybris\config/solr/embedded" dataDir="D:\Project\Teli-project\Teli-instance-5-6\hybris\data\solrfacetsearch\MASTER\powertools_Product"/>
 
