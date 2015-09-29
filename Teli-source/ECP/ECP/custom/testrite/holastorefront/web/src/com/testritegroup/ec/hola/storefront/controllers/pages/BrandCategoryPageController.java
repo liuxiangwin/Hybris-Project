@@ -17,6 +17,7 @@ package com.testritegroup.ec.hola.storefront.controllers.pages;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractCategoryPageController;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
+import de.hybris.platform.commercefacades.product.data.ProductData;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -73,8 +74,8 @@ public class BrandCategoryPageController extends AbstractCategoryPageController
 			final HttpServletRequest request, final HttpServletResponse response) throws UnsupportedEncodingException,
 			CMSItemNotFoundException
 	{
-		getStadiumData(code);
-		getMockData(model);
+		getStadiumData(model, code);
+		//getMockData(model);
 		storeCmsPageInModel(model, getContentPageForLabelOrId(BRAND_CATEGORY_CMS_PAGE));
 		setUpMetaDataForContentPage(model, getContentPageForLabelOrId(BRAND_CATEGORY_CMS_PAGE));
 		return getViewForPage(model);
@@ -116,11 +117,14 @@ public class BrandCategoryPageController extends AbstractCategoryPageController
 
 	/**
 	 * Add some parameter
-	 * 
+	 *
 	 * @param code
 	 */
-	private void getStadiumData(final String code)
+	private void getStadiumData(final Model model, final String code)
 	{
-		stadiumFacade.getStadiums(code);
+		final List<ProductData> productList = stadiumFacade.getStadiums(code);
+		model.addAttribute("productList", productList);
+
+
 	}
 }

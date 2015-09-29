@@ -30,7 +30,6 @@
 <body>
 
 	<c:if test="${not empty ecpList}">
-
 		<ul>
 			<c:forEach var="val" items="${ecpList}">
 				<li>${val.code}</li>
@@ -38,8 +37,19 @@
 				<li>${val.story}</li>
 			</c:forEach>
 		</ul>
-
 	</c:if>
+
+	<c:if test="${not empty productList}">
+		<ul>
+			<c:forEach var="element" items="${productList}">
+				<li id='code'>${element.name}</li>
+				
+				<li id='manufacturer'>${element.manufacturer}</li>
+		   </c:forEach>
+		</ul>
+	</c:if>
+
+
 
 
 	<!--購物車-->
