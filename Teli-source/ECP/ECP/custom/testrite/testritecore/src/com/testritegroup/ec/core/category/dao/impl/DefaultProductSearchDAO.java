@@ -82,17 +82,33 @@ public class DefaultProductSearchDAO extends DefaultGenericDao<ProductModel> imp
 	@Override
 	public List<ProductModel> findAllProudcts()
 	{
-		//final int maxResultCount = limit == null ? DEFAULT_LIMIT : limit.intValue();
-		final String queryString = //
-		"SELECT {p:" + ProductModel.PK + "} "//
-				+ "FROM {" + ProductModel._TYPECODE + " AS p} ";
 
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
-		//query.setStart(start);
-		query.setCount(DEFAULT_LIMIT);
+		List<ProductModel> resultList = null;
+		try
+		{
+			//final int maxResultCount = limit == null ? DEFAULT_LIMIT : limit.intValue();
+			searchRestrictionService.disableSearchRestrictions();
+			final String queryString = //
+			"SELECT {p:" + ProductModel.PK + "} "//
+					+ "FROM {" + ProductModel._TYPECODE + " AS p} ";
 
-		// Return the list of StadiumModels.
-		return flexibleSearchService.<ProductModel> search(query).getResult();
+			final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+			//query.setStart(start);
+			//query.setCount(DEFAULT_LIMIT);
+
+			// Return the list of StadiumModels.
+			resultList = flexibleSearchService.<ProductModel> search(query).getResult();
+		}
+		catch (final Exception e)
+		{
+			// YTODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			searchRestrictionService.enableSearchRestrictions();
+		}
+		return resultList;
 	}
 
 
