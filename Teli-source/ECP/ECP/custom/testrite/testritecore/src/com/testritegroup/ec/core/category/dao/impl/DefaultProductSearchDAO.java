@@ -33,6 +33,8 @@ public class DefaultProductSearchDAO extends DefaultGenericDao<ProductModel> imp
 
 	private static final String QUERY_ALL_PRODCUCT = "SELECT {p:PK} " + "FROM {Product AS p} ";
 
+	private static final int DEFAULT_LIMIT = 100;
+
 	//final String queryString2 = "SELECT {p:" + ProductModel.PK + "} "//
 	//+ "FROM {" + ProductModel._TYPECODE + " AS p} ";
 
@@ -78,9 +80,19 @@ public class DefaultProductSearchDAO extends DefaultGenericDao<ProductModel> imp
 	}
 
 	@Override
-	public List<ProductModel> findStadiumsByCode(final String code)
+	public List<ProductModel> findAllProudcts()
 	{
-		return null;
+		//final int maxResultCount = limit == null ? DEFAULT_LIMIT : limit.intValue();
+		final String queryString = //
+		"SELECT {p:" + ProductModel.PK + "} "//
+				+ "FROM {" + ProductModel._TYPECODE + " AS p} ";
+
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+		//query.setStart(start);
+		query.setCount(DEFAULT_LIMIT);
+
+		// Return the list of StadiumModels.
+		return flexibleSearchService.<ProductModel> search(query).getResult();
 	}
 
 

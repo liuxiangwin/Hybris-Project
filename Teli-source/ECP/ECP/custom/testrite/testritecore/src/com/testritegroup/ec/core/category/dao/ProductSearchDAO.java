@@ -28,5 +28,5 @@ public interface ProductSearchDAO
 	 *           the code to search for stadiums
 	 * @return All stadiums with the given code.
 	 */
-	List<ProductModel> findStadiumsByCode(String code);
+	List<ProductModel> findAllProudcts();
 }
