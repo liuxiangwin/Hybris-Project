@@ -38,26 +38,33 @@ public class DefaultProductSearchDAOIntegrationTest extends ServicelayerTransact
 	/** Capacity of test stadium. */
 	private static final Integer STADIUM_CAPACITY = Integer.valueOf(12345);
 
+
+
 	@Test
 	public void stadiumDAOTest()
 	{
-		final List<ProductModel> productModelList = productSearchDAO.findProductFromStadiums(STADIUM_NAME);
-		assertTrue("There should be no Stadium found", productModelList.isEmpty());
+		final List<ProductModel> productsByCode = productSearchDAO.findProductFromStadiums("107701");
+		//assertTrue("There should be no ProductModel found", productModelList.isEmpty());
+
+		assertTrue("There should ProductModel found", productsByCode.size() > 0);
+
+		final List<ProductModel> allProducts = productSearchDAO.findAllProudcts();
+		final int size = allProducts.size();
+
+		assertTrue("There should ProductModel found", size > 0);
 
 		/*
-		 * List<ProductModel> allStadiums = productSearchDAO.findStadiums(); final int size = allStadiums.size();
-		 * 
-		 * final ProductModel stadiumModel = new StadiumModel(); stadiumModel.setCode(STADIUM_NAME);
+		 * final StadiumModel stadiumModel = new StadiumModel(); stadiumModel.setCode(STADIUM_NAME);
 		 * stadiumModel.setCapacity(STADIUM_CAPACITY); modelService.save(stadiumModel);
-		 * 
-		 * allStadiums = productSearchDAO.findStadiums(); assertEquals(size + 1, allStadiums.size());
-		 * assertEquals("Unexpected stadium found", stadiumModel, allStadiums.get(allStadiums.size() - 1));
-		 * 
-		 * productModelList = productSearchDAO.findStadiumsByCode(STADIUM_NAME);
-		 * assertEquals("Find the one we just saved", 1, productModelList.size()); assertEquals("Check the names",
-		 * STADIUM_NAME, productModelList.get(0).getCode()); assertEquals("Check the capacity", STADIUM_CAPACITY,
-		 * productModelList.get(0).getCapacity());
+		 *
+		 * allProducts = stadiumDAO.findStadiums(); assertEquals(size + 1, allProducts.size());
+		 * assertEquals("Unexpected stadium found", stadiumModel, allProducts.get(allProducts.size() - 1));
+		 *
+		 * stadiumsByCode = stadiumDAO.findStadiumsByCode(STADIUM_NAME); assertEquals("Find the one we just saved", 1,
+		 * stadiumsByCode.size()); assertEquals("Check the names", STADIUM_NAME, stadiumsByCode.get(0).getCode());
+		 * assertEquals("Check the capacity", STADIUM_CAPACITY, stadiumsByCode.get(0).getCapacity());
 		 */
+
 	}
 
 	/*
