@@ -8,9 +8,9 @@
 		<extension name='assistedservicefacades' />
 		<extension name='assistedservicestorefront' />
 		
-		<!-- <extension name="commercefacades" />
-        <extension name="commercewebservicescommons" /> -->
-		
+	<!-- 	<extension name="commercefacades" />
+        <extension name="commercewebservicescommons" />
+		 -->
 
 		<!-- <extension name='yaddon' /> 
 		<extension name='yacceleratorcockpits'/> 
@@ -22,13 +22,13 @@
 		<extension name='acceleratorwebservicesaddon' /> -->
 		
 		 <!-- ext-data -->
-		<extension name="commercesearchsampledata" />
+		<!-- <extension name="commercesearchsampledata" />
 		<extension name="electronicsstore" />
 		<extension name="b2bacceleratorsampledata" />
-		<extension name="instoresampledata" />
+		<extension name="instoresampledata" /> -->
 		
 		 <!-- ext-content -->
-        <extension name="productcockpit" />
+      <!--   <extension name="productcockpit" />
         <extension name="cms2" />
         <extension name="cms2lib" />
         <extension name="cmscockpit" />
@@ -36,14 +36,14 @@
         <extension name="bmecathmc" />
         <extension name="importcockpit" />
         <extension name="classificationsystems" />
-        <extension name="classificationsystemshmc" />
+        <extension name="classificationsystemshmc" /> -->
 		
-		<extension name="yb2bacceleratorcore" /> 
+		<!--  <extension name="yb2bacceleratorcore" /> 
 		<extension name="yb2bacceleratorfacades" /> 
 		<extension name="yb2bacceleratorinitialdata" />
 		<extension name="yb2bacceleratorstorefront" /> 
 		<extension name="yb2bacceleratortest" /> 
-
+ -->
  
 		<!-- ext-addon -->
         <extension name="addonsupport" />
@@ -53,13 +53,12 @@
 		<!-- TestRite's modules -->
 		<!-- <extension name='testritetest' /> -->
 		
-		<extension name='testritecockpits' />
+	  	<extension name='testritecockpits' />
 		<extension name='testritefulfilmentprocess' />
 		<extension name='testritecore' />
 		<extension name='holafacades' />
 		<extension name='testritestorefrontcommons' />
 		<extension name='holastorefront' />
 		<extension name='holainitialdata' />
-
 	</extensions>
 </hybrisconfig>
