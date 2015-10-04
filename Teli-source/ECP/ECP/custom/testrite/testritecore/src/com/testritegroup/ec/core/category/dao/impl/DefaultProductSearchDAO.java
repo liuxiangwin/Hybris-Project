@@ -3,9 +3,12 @@
  */
 package com.testritegroup.ec.core.category.dao.impl;
 
+import de.hybris.platform.catalog.CatalogVersionService;
+import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.search.restriction.SearchRestrictionService;
 import de.hybris.platform.servicelayer.internal.dao.DefaultGenericDao;
+import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.SearchResult;
@@ -30,6 +33,14 @@ public class DefaultProductSearchDAO extends DefaultGenericDao<ProductModel> imp
 
 	@Autowired
 	private SearchRestrictionService searchRestrictionService;
+
+	@Autowired
+	private CatalogVersionService catalogVersionService;
+
+	@Autowired
+	private ModelService modelService;
+
+
 
 	private static final String QUERY_ALL_PRODCUCT = "SELECT {p:PK} " + "FROM {Product AS p} ";
 
@@ -66,6 +77,7 @@ public class DefaultProductSearchDAO extends DefaultGenericDao<ProductModel> imp
 			final FlexibleSearchQuery query = new FlexibleSearchQuery(queryProductByCode);
 			query.addQueryParameter("code", code);
 			resultList = flexibleSearchService.<ProductModel> search(query).getResult();
+			//wrapperLogic();
 		}
 		catch (final Exception e)
 		{
@@ -98,6 +110,8 @@ public class DefaultProductSearchDAO extends DefaultGenericDao<ProductModel> imp
 
 			// Return the list of StadiumModels.
 			resultList = flexibleSearchService.<ProductModel> search(query).getResult();
+
+
 		}
 		catch (final Exception e)
 		{
@@ -127,6 +141,16 @@ public class DefaultProductSearchDAO extends DefaultGenericDao<ProductModel> imp
 	{
 		final SearchResult<ProductModel> result = getFlexibleSearchService().search(query);
 		return result;
+	}
+
+	private void wrapperLogic()
+	{
+		final ProductModel product = modelService.create(ProductModel.class);
+		final CatalogVersionModel catalogVersionModel = catalogVersionService.getCatalogVersion("electronicsProductCatalog",
+				"Online");
+		product.setCatalogVersion(catalogVersionModel);
+		product.setManufacturerName("Sony");
+		modelService.save(product);
 	}
 
 }
