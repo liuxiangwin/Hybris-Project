@@ -3,8 +3,11 @@
  */
 package com.testritegroup.ec.core.category.dao.impl;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import de.hybris.platform.catalog.CatalogVersionService;
+import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.servicelayer.ServicelayerTransactionalTest;
 import de.hybris.platform.servicelayer.model.ModelService;
@@ -19,7 +22,7 @@ import com.testritegroup.ec.core.category.dao.ProductSearchDAO;
 
 
 /**
- * @author luca.gennari
+ * @author Alan Liu
  *
  */
 public class DefaultProductSearchDAOIntegrationTest extends ServicelayerTransactionalTest
@@ -32,51 +35,63 @@ public class DefaultProductSearchDAOIntegrationTest extends ServicelayerTransact
 	@Resource
 	private ModelService modelService;
 
-	/** Name of test stadium. */
-	private static final String STADIUM_NAME = "Wembley";
+	@Resource
+	private CatalogVersionService catalogVersionService;
 
-	/** Capacity of test stadium. */
-	private static final Integer STADIUM_CAPACITY = Integer.valueOf(12345);
+	private static final String code_NAME = "Wembley";
 
+	private static final String manaufacture_NAME = "Alan-Liu-Manaufacture";
 
 
 	@Test
-	public void stadiumDAOTest()
+	public void productSearchDAOTest()
 	{
 		final List<ProductModel> productsByCode = productSearchDAO.findProductFromStadiums("107701");
-		//assertTrue("There should be no ProductModel found", productModelList.isEmpty());
 
 		assertTrue("There should ProductModel found", productsByCode.size() > 0);
+	}
 
-		final List<ProductModel> allProducts = productSearchDAO.findAllProudcts();
+	@Test
+	public void productSearchDAOTestByCode()
+	{
+		List<ProductModel> allProducts = productSearchDAO.findAllProudcts();
 		final int size = allProducts.size();
 
 		assertTrue("There should ProductModel found", size > 0);
 
-		/*
-		 * final StadiumModel stadiumModel = new StadiumModel(); stadiumModel.setCode(STADIUM_NAME);
-		 * stadiumModel.setCapacity(STADIUM_CAPACITY); modelService.save(stadiumModel);
-		 *
-		 * allProducts = stadiumDAO.findStadiums(); assertEquals(size + 1, allProducts.size());
-		 * assertEquals("Unexpected stadium found", stadiumModel, allProducts.get(allProducts.size() - 1));
-		 *
-		 * stadiumsByCode = stadiumDAO.findStadiumsByCode(STADIUM_NAME); assertEquals("Find the one we just saved", 1,
-		 * stadiumsByCode.size()); assertEquals("Check the names", STADIUM_NAME, stadiumsByCode.get(0).getCode());
-		 * assertEquals("Check the capacity", STADIUM_CAPACITY, stadiumsByCode.get(0).getCapacity());
-		 */
+		final CatalogVersionModel catalogVersionModel = catalogVersionService.getCatalogVersion("electronicsProductCatalog",
+				"Online");
 
+		final ProductModel productModel = new ProductModel();
+		productModel.setCode(code_NAME);
+		productModel.setManufacturerName(manaufacture_NAME);
+		productModel.setCatalogVersion(catalogVersionModel);
+		productModel.setAllowOnlineSell(true);
+		modelService.save(productModel);
+
+
+		allProducts = productSearchDAO.findAllProudcts();
+		assertEquals(size + 1, allProducts.size());
+		assertEquals("Unexpected Product found", productModel, allProducts.get(allProducts.size() - 1));
+
+
+		final List<ProductModel> productsByCode = productSearchDAO.findProductFromStadiums(code_NAME);
+		assertEquals("Find the one we just saved", 1, productsByCode.size());
+		assertEquals("Check the code names", code_NAME, productsByCode.get(0).getCode());
+		assertEquals("Check the manaufacture_name", manaufacture_NAME, productsByCode.get(0).getManufacturerName());
 	}
 
-	/*
-	 * @Test(expected = IllegalArgumentException.class) public void stadiumDAOCornerCases() { // Calling
-	 * findStadiumsByCode with the empty string returns no results List<StadiumModel> stadiums =
-	 * productSearchDAO.findStadiumsByCode(""); assertTrue("No Stadium should be returned", stadiums.isEmpty());
-	 * 
-	 * // Calling findStadiumByCode with null throws an IllegalArgumentException stadiums =
-	 * productSearchDAO.findStadiumsByCode(null);
-	 * 
-	 * // Create a StadiumModel and call saveStadiumModel final StadiumModel stadiumModel = new StadiumModel();
-	 * stadiumModel.setCapacity(Integer.valueOf(1000)); stadiumModel.setCode(STADIUM_NAME);
-	 * modelService.save(stadiumModel); }
-	 */
+
+	//@Test(expected = IllegalArgumentException.class)
+	@Test
+	public void stadiumDAOCornerCases()
+	{
+		// Calling findStadiumsByCode with the empty string returns no results
+		final List<ProductModel> products = productSearchDAO.findProductFromStadiums("");
+		assertTrue("No Product should be returned", products.isEmpty());
+
+		// Calling findStadiumByCode with null throws an IllegalArgumentException
+		//products = productSearchDAO.findProductFromStadiums(null);
+
+	}
 }
