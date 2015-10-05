@@ -313,15 +313,29 @@
 	</bean>
     
     <!-- Alan Liu -->
+    <!-- ####### Service Logic ##### -->
     <alias name="defaultProductSearchService" alias="productSearchService"/>
     <bean id="defaultProductSearchService" class="com.testritegroup.ec.core.category.impl.DefaultProductSearchService">
         <property name="productSearchDAO" ref="productSearchDAO"/>
     </bean>
-    
+    <!-- ####### DataAccess Logic ##### -->
     <alias alias="productSearchDAO" name="productSearchDAO"/>
 	<bean id="productSearchDAO" class="com.testritegroup.ec.core.category.dao.impl.DefaultProductSearchDAO">
 		<constructor-arg value="Product"/>
 	</bean>
+     
+     <!-- ####### Listener Loigc ##### -->
+    <bean id="productValueInterceptor" class="com.testritegroup.ec.core.category.interceptors.ProductValueInterceptor"/>	
+	<bean id="ProductValueInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+    	<property name="interceptor" ref="productValueInterceptor" />
+    	<property name="typeCode" value="Product" />
+	</bean> 
+	
+	 <!--  @@#Event Listener should declare abstractEventListener##@@ -->
+	<bean id="manufactureListener" class="com.testritegroup.ec.core.category.events.ManaufactureEventListener"
+	parent="abstractEventListener"/>
+    
+   
 
 	
 </beans>
