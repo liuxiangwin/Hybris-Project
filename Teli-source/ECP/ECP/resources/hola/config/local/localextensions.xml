@@ -8,10 +8,16 @@
 		<extension name='assistedservicefacades' />
 		<extension name='assistedservicestorefront' />
 		
-	<!-- 	<extension name="commercefacades" />
+		<extension name="commercefacades" />
         <extension name="commercewebservicescommons" />
-		 -->
-
+		
+	
+	
+		<extension name='chinaacceleratorfacades'/> 
+		<extension name='chinaacceleratorservices'/> 
+		<extension name='alipay'/> 
+		
+		
 		<!-- <extension name='yaddon' /> 
 		<extension name='yacceleratorcockpits'/> 
 		<extension name='yacceleratorinitialdata'/> 
@@ -21,12 +27,16 @@
 		<extension name='apparelstore' />
 		<extension name='acceleratorwebservicesaddon' /> -->
 		
+		<extension name="commercesearchsampledata" />
+		<extension name="electronicsstore" />
+		<extension name="b2bacceleratorsampledata" />
+		<extension name="instoresampledata" />
 		 <!-- ext-data -->
 		<!-- <extension name="commercesearchsampledata" />
 		<extension name="electronicsstore" />
 		<extension name="b2bacceleratorsampledata" />
-		<extension name="instoresampledata" /> -->
-		
+		<extension name="instoresampledata" />
+		 -->
 		 <!-- ext-content -->
       <!--   <extension name="productcockpit" />
         <extension name="cms2" />
@@ -53,12 +63,12 @@
 		<!-- TestRite's modules -->
 		<!-- <extension name='testritetest' /> -->
 		
-	  	<extension name='testritecockpits' />
+		<extension name='testritecockpits' />
 		<extension name='testritefulfilmentprocess' />
 		<extension name='testritecore' />
 		<extension name='holafacades' />
 		<extension name='testritestorefrontcommons' />
 		<extension name='holastorefront' />
-		<extension name='holainitialdata' />
+		<extension name='holainitialdata' /> 
 	</extensions>
 </hybrisconfig>
