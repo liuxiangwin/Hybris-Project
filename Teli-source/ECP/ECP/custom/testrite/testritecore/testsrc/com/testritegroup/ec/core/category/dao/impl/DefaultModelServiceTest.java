@@ -22,7 +22,7 @@ import com.testritegroup.ec.core.category.dao.ProductSearchDAO;
 
 
 /**
- * @author Alan Liu ModelService Test
+ * @author Alan Liu ModelService Test Basic Saving Logic
  *
  */
 public class DefaultModelServiceTest extends ServicelayerTransactionalTest
