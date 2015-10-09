@@ -6,6 +6,7 @@ package com.testritegroup.ec.core.category.interceptors;
 import static de.hybris.platform.servicelayer.model.ModelContextUtils.getItemModelContext;
 
 import de.hybris.platform.catalog.CatalogVersionService;
+import de.hybris.platform.core.model.order.OrderModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.servicelayer.event.EventService;
 import de.hybris.platform.servicelayer.interceptor.InterceptorContext;
@@ -14,8 +15,6 @@ import de.hybris.platform.servicelayer.interceptor.PrepareInterceptor;
 import de.hybris.platform.servicelayer.interceptor.ValidateInterceptor;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.testritegroup.ec.core.category.events.ManaufactureEvent;
 
 
 /**
@@ -39,13 +38,21 @@ public class ProductValueInterceptor implements ValidateInterceptor, PrepareInte
 	@Override
 	public void onPrepare(final Object model, final InterceptorContext ctx) throws InterceptorException
 	{
+
 		if (model instanceof ProductModel)
 		{
 			final ProductModel productModel = (ProductModel) model;
 			if (checkManufactureName(productModel, ctx))
 			{
-				eventService.publishEvent(new ManaufactureEvent(productModel.getCode(), productModel.getManufacturerName()));
+				//eventService.publishEvent(new ManaufactureEvent(productModel.getCode(), productModel.getManufacturerName()));
 			}
+		}
+
+		if (model instanceof OrderModel)
+		{
+			//final OrderModel orderModel = (OrderModel) model;
+
+			//eventService.publishEvent(new ManaufactureEvent(orderModel.getCode(), orderModel.getManufacturerName()));
 		}
 
 	}
