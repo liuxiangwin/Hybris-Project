@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 import de.hybris.platform.catalog.CatalogVersionService;
 import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.core.model.product.ProductModel;
-import de.hybris.platform.servicelayer.ServicelayerTransactionalTest;
+import de.hybris.platform.servicelayer.ServicelayerTest;
 import de.hybris.platform.servicelayer.model.ModelService;
 
 import java.util.List;
@@ -25,7 +25,8 @@ import com.testritegroup.ec.core.category.dao.ProductSearchDAO;
  * @author Alan Liu ModelService Test Basic Saving Logic
  *
  */
-public class DefaultModelServiceTest extends ServicelayerTransactionalTest
+public class DefaultModelServiceTest extends ServicelayerTest
+//extends ServicelayerTransactionalTest
 {
 	/** As this is an integration test the test to class gets injected here. */
 	@Resource
@@ -45,7 +46,7 @@ public class DefaultModelServiceTest extends ServicelayerTransactionalTest
 
 
 	@Test
-	public void productSearchDAOTestByCode()
+	public void testModelService_Save()
 	{
 		List<ProductModel> allProducts = productSearchDAO.findAllProudcts();
 		final int size = allProducts.size();
@@ -67,14 +68,33 @@ public class DefaultModelServiceTest extends ServicelayerTransactionalTest
 		assertEquals(size + 1, allProducts.size());
 		assertEquals("Unexpected Product found", productModel, allProducts.get(allProducts.size() - 1));
 
-
-		/*
-		 * final List<ProductModel> productsByCode = productSearchDAO.findProductFromStadiums(code_NAME);
-		 * assertEquals("Find the one we just saved", 1, productsByCode.size()); assertEquals("Check the code names",
-		 * code_NAME, productsByCode.get(0).getCode()); assertEquals("Check the manaufacture_name", manaufacture_NAME,
-		 * productsByCode.get(0).getManufacturerName());
-		 */
 	}
 
+
+	@Test
+	public void testModelService_SaveAll()
+	{
+		List<ProductModel> allProducts = productSearchDAO.findAllProudcts();
+		final int size = allProducts.size();
+
+		assertTrue("There should ProductModel found", size > 0);
+
+		final CatalogVersionModel catalogVersionModel = catalogVersionService.getCatalogVersion("electronicsProductCatalog",
+				"Online");
+
+
+		final ProductModel productModel = modelService.create(ProductModel.class);
+		productModel.setCode(code_NAME);
+		productModel.setManufacturerName(manaufacture_NAME);
+		productModel.setCatalogVersion(catalogVersionModel);
+		productModel.setAllowOnlineSell(true);
+		modelService.saveAll();
+
+
+		allProducts = productSearchDAO.findAllProudcts();
+		assertEquals(size + 1, allProducts.size());
+		assertEquals("Unexpected Product found", productModel, allProducts.get(allProducts.size() - 1));
+
+	}
 
 }
