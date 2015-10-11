@@ -423,6 +423,25 @@
                 </attributes>
             </itemtype>
 
+			<itemtype code="Ean" autocreate="true" generate="true">
+				<description>Ean by Alan Liu</description>
+				<deployment table="EanAlanLiu" typecode="15009" />
+				<attributes>
+					<attribute qualifier="eanId" type="java.lang.String">
+						<modifiers unique="true" read="true" write="true"
+							optional="false" />
+						<persistence type="property" />
+					</attribute>
+		
+					<attribute qualifier="eanDesc" type="localized:java.lang.String">
+						<modifiers read="true" write="true" optional="false" />
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+            
+            
+
         </typegroup>
 
 

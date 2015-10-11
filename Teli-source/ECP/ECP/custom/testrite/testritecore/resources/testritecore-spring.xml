@@ -339,19 +339,39 @@
     <alias name="productCustomerPopulator" alias="customerPopulator"/>
 	<bean id="productCustomerPopulator" class="com.testritegroup.ec.core.category.converter.poplator.ProductCustomerPopulator"
 	 parent="defaultProductPopulator" >
-		<property name="invoiceConverter" ref="invoiceConverter"/>
-		<property name="paymentModeConverter" ref="paymentModeConverter"/>
+		<property name="manafactureConverter" ref="manafactureConverter"/>
+		<property name="eanConverter" ref="eanConverter"/>
 	</bean>
 	
-	<!--  @@#Convnter##@@ -->
-	<alias name="defaultInvoiceConverter" alias="invoiceConverter"/> 
-	<bean id="defaultInvoiceConverter" parent="abstractPopulatingConverter">
-			<lookup-method name="createTarget" bean="invoiceData"/>
-			<property name="populators">
-				<list>
-					<ref bean="invoicePopulator"/>
-				</list>
-			</property>
+	<!--  @@#Convnter propety with populator##@@ -->
+	<alias name="defaultManafactureConverter" alias="manafactureConverter" />
+	<bean id="defaultManafactureConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="manafactureData" />
+		<property name="populators">
+			<list>
+				<ref bean="manafacturePopulator" />
+			</list>
+		</property>
 	</bean>
+	<alias name="defaultManafacturePopulator" alias="manafacturePopulator" />
+	<bean id="defaultManafacturePopulator"
+		class="com.testritegroup.ec.core.category.converter.poplator.ManafacturePopulator">
+	</bean>
+	
+	<!--  @@#Convnter propety with populator##@@ -->
+	<alias name="defaultEanConverter" alias="eanConverter" />
+	<bean id="defaultEanConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="eanData" />
+		<property name="populators">
+			<list>
+				<ref bean="eanPopulator" />
+			</list>
+		</property>
+	</bean>
+	<alias name="defaultEanPopulator" alias="eanPopulator" />
+	<bean id="defaultEanPopulator"
+		class="com.testritegroup.ec.core.category.converter.poplator.EanPopulator">
+	</bean>
+	
 	
 </beans>
