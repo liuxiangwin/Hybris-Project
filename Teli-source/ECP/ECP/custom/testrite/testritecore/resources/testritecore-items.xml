@@ -403,6 +403,25 @@
                     </attribute>
                 </attributes>
             </itemtype>
+            
+             <itemtype code="Manafacture" autocreate="true" generate="true">
+                <description>Manafacture by Alan Liu</description>
+                <deployment table="ManafactureAlanLiu" typecode="15008"/>
+                <attributes>
+                    <attribute qualifier="manafactureId" type="java.lang.String">
+                        <modifiers unique="true" read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                    </attribute>                    
+                     <attribute qualifier="manafactureName" type="localized:java.lang.String">
+                        <modifiers read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                    </attribute>                    
+                     <attribute qualifier="manafactureDesc" type="localized:java.lang.String">
+                        <modifiers read="true" write="true" optional="false"/>
+                        <persistence type="property"/>
+                    </attribute>               
+                </attributes>
+            </itemtype>
 
         </typegroup>
 

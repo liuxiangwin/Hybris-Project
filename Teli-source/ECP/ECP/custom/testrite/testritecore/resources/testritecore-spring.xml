@@ -335,7 +335,23 @@
 	<bean id="manufactureListener" class="com.testritegroup.ec.core.category.events.ManaufactureEventListener"
 	parent="abstractEventListener"/>
     
-   
-
+      <!-- ####### Converter and Populator##### -->
+    <alias name="productCustomerPopulator" alias="customerPopulator"/>
+	<bean id="productCustomerPopulator" class="com.testritegroup.ec.core.category.converter.poplator.ProductCustomerPopulator"
+	 parent="defaultProductPopulator" >
+		<property name="invoiceConverter" ref="invoiceConverter"/>
+		<property name="paymentModeConverter" ref="paymentModeConverter"/>
+	</bean>
+	
+	<!--  @@#Convnter##@@ -->
+	<alias name="defaultInvoiceConverter" alias="invoiceConverter"/> 
+	<bean id="defaultInvoiceConverter" parent="abstractPopulatingConverter">
+			<lookup-method name="createTarget" bean="invoiceData"/>
+			<property name="populators">
+				<list>
+					<ref bean="invoicePopulator"/>
+				</list>
+			</property>
+	</bean>
 	
 </beans>
