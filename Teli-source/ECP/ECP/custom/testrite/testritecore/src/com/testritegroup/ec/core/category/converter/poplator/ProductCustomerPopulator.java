@@ -13,12 +13,15 @@
  */
 package com.testritegroup.ec.core.category.converter.poplator;
 
-import de.hybris.platform.chinaaccelerator.facades.data.PaymentModeData;
-import de.hybris.platform.chinaaccelerator.services.model.invoice.InvoiceModel;
-import de.hybris.platform.commercefacades.order.data.InvoiceData;
 import de.hybris.platform.commercefacades.product.converters.populator.ProductPopulator;
-import de.hybris.platform.core.model.order.payment.PaymentModeModel;
+import de.hybris.platform.commercefacades.product.data.ProductData;
+import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
+
+import com.testritegroup.ec.core.category.EanData;
+import com.testritegroup.ec.core.category.ManafactureData;
+import com.testritegroup.ec.core.model.EanModel;
+import com.testritegroup.ec.core.model.ManafactureModel;
 
 
 /**
@@ -28,8 +31,22 @@ public class ProductCustomerPopulator extends ProductPopulator
 //extends ProductPopulator
 {
 
-	private Converter<InvoiceModel, InvoiceData> manafactureConverter;
-	private Converter<PaymentModeModel, PaymentModeData> paymentModeConverter;
+	private Converter<ManafactureModel, ManafactureData> manafactureConverter;
+	private Converter<EanModel, EanData> paymentModeConverter;
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * de.hybris.platform.commercefacades.product.converters.populator.ProductPopulator#populate(de.hybris.platform.core
+	 * .model.product.ProductModel, de.hybris.platform.commercefacades.product.data.ProductData)
+	 */
+	@Override
+	public void populate(final ProductModel source, final ProductData target)
+	{
+		// YTODO Auto-generated method stub
+		super.populate(source, target);
+	}
 
 
 
