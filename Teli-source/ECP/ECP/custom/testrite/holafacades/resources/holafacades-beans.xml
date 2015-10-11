@@ -33,4 +33,9 @@
         <property name="name" type="String"/>
         <property name="descripton" type="String"/>
     </bean>
+    
+     <bean class="com.testritegroup.ec.core.category.EanData">
+        <property name="code" type="String"/>
+        <property name="descripton" type="String"/>
+    </bean>
 </beans>
