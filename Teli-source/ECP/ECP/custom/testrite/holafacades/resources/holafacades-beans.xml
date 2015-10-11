@@ -26,4 +26,11 @@
         <property name="name" type="String"/>
         <property name="story" type="String"/>
     </bean>
+    
+     <!-- ####### Alan DTO Datar##### -->	
+    <bean class="com.testritegroup.ec.core.category.ManafactureData">
+        <property name="code" type="String"/>
+        <property name="name" type="String"/>
+        <property name="descripton" type="String"/>
+    </bean>
 </beans>
