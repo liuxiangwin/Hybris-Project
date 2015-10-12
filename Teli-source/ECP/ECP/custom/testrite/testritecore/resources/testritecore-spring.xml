@@ -336,14 +336,14 @@
 	parent="abstractEventListener"/>
     
       <!-- ####### Converter and Populator##### -->
-    <!-- <alias name="productCustomerPopulator" alias="customerPopulator"/>
-	<bean id="productCustomerPopulator" class="com.testritegroup.ec.core.category.converter.poplator.ProductCustomerPopulator"
+     <alias name="productFeaturePopulator" alias="productFeaturePopulator"/>
+	<bean id="productFeaturePopulator" class="com.testritegroup.ec.core.category.converter.poplator.ProductFeaturePopulator"
 	 parent="defaultProductPopulator" >
 		<property name="manafactureConverter" ref="manafactureConverter"/>
 		<property name="eanModelConverter" ref="eanConverter"/>
 	</bean>
 	
-	 @@#Convnter propety with populator##@@
+	<!--  @@#Convnter propety with populator##@@ -->
 	<alias name="defaultManafactureConverter" alias="manafactureConverter" />
 	<bean id="defaultManafactureConverter" parent="abstractPopulatingConverter">
 		<lookup-method name="createTarget" bean="manafactureData" />
@@ -358,7 +358,7 @@
 		class="com.testritegroup.ec.core.category.converter.poplator.ManafacturePopulator">
 	</bean>
 	
-	 @@#Convnter propety with populator##@@
+	<!--  @@#Convnter propety with populator##@@ -->
 	<alias name="defaultEanConverter" alias="eanConverter" />
 	<bean id="defaultEanConverter" parent="abstractPopulatingConverter">
 		<lookup-method name="createTarget" bean="eanData" />
@@ -371,6 +371,6 @@
 	<alias name="defaultEanPopulator" alias="eanPopulator" />
 	<bean id="defaultEanPopulator"
 		class="com.testritegroup.ec.core.category.converter.poplator.EanPopulator">
-	</bean> -->	
+	</bean>
 	
 </beans>
