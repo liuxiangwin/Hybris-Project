@@ -48,7 +48,7 @@
         <extension name="classificationsystems" />
         <extension name="classificationsystemshmc" /> -->
 		
-		<!--  <extension name="yb2bacceleratorcore" /> 
+	<!-- 	<extension name="yb2bacceleratorcore" /> 
 		<extension name="yb2bacceleratorfacades" /> 
 		<extension name="yb2bacceleratorinitialdata" />
 		<extension name="yb2bacceleratorstorefront" /> 

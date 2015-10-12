@@ -32,7 +32,42 @@ public class ProductCustomerPopulator extends ProductPopulator
 {
 
 	private Converter<ManafactureModel, ManafactureData> manafactureConverter;
-	private Converter<EanModel, EanData> paymentModeConverter;
+
+	private Converter<EanModel, EanData> eanModelConverter;
+
+	/**
+	 * @return the manafactureConverter
+	 */
+	public Converter<ManafactureModel, ManafactureData> getManafactureConverter()
+	{
+		return manafactureConverter;
+	}
+
+	/**
+	 * @param manafactureConverter
+	 *           the manafactureConverter to set
+	 */
+	public void setManafactureConverter(final Converter<ManafactureModel, ManafactureData> manafactureConverter)
+	{
+		this.manafactureConverter = manafactureConverter;
+	}
+
+	/**
+	 * @return the eanModelConverter
+	 */
+	public Converter<EanModel, EanData> getEanModelConverter()
+	{
+		return eanModelConverter;
+	}
+
+	/**
+	 * @param eanModelConverter
+	 *           the eanModelConverter to set
+	 */
+	public void setEanModelConverter(final Converter<EanModel, EanData> eanModelConverter)
+	{
+		this.eanModelConverter = eanModelConverter;
+	}
 
 	/*
 	 * (non-Javadoc)

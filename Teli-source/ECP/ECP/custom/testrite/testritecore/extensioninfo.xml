@@ -16,10 +16,14 @@
 
 		<!-- you should add all required extensions to this list, except platform 
 			extensions which are automatically required -->
+			
+		<requires-extension name="acceleratorfacades"/>	
 		<requires-extension name="acceleratorservices"/>
 		<requires-extension name="acceleratorcms"/>
 		<requires-extension name="testritefulfilmentprocess"/>
 		<requires-extension name="hmc"/>
+		
+		
 
 		<coremodule generated="true" manager="com.testritegroup.ec.core.jalo.TestriteCoreManager" packageroot="com.testritegroup.ec.core"/>
 

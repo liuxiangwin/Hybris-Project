@@ -21,7 +21,7 @@ import com.testritegroup.ec.core.model.EanModel;
 
 
 /**
- * Alan Liu
+ * Alan Liu EanPopulator
  */
 public class EanPopulator<SOURCE extends EanModel, TARGET extends EanData> implements Populator<EanModel, EanData>
 //extends ProductPopulator
@@ -29,7 +29,7 @@ public class EanPopulator<SOURCE extends EanModel, TARGET extends EanData> imple
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see de.hybris.platform.converters.Populator#populate(java.lang.Object, java.lang.Object)
 	 */
 	@Override

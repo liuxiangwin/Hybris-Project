@@ -21,7 +21,7 @@ import com.testritegroup.ec.core.model.ManafactureModel;
 
 
 /**
- * Alan Liu
+ * Alan Liu ManafacturePopulator
  */
 public class ManafacturePopulator<SOURCE extends ManafactureModel, TARGET extends ManafactureData> implements
 		Populator<ManafactureModel, ManafactureData>
@@ -30,7 +30,7 @@ public class ManafacturePopulator<SOURCE extends ManafactureModel, TARGET extend
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see de.hybris.platform.converters.Populator#populate(java.lang.Object, java.lang.Object)
 	 */
 	@Override
