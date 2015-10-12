@@ -340,7 +340,7 @@
 	<bean id="productCustomerPopulator" class="com.testritegroup.ec.core.category.converter.poplator.ProductCustomerPopulator"
 	 parent="defaultProductPopulator" >
 		<property name="manafactureConverter" ref="manafactureConverter"/>
-		<property name="eanConverter" ref="eanConverter"/>
+		<property name="eanModelConverter" ref="eanConverter"/>
 	</bean>
 	
 	<!--  @@#Convnter propety with populator##@@ -->
@@ -371,7 +371,5 @@
 	<alias name="defaultEanPopulator" alias="eanPopulator" />
 	<bean id="defaultEanPopulator"
 		class="com.testritegroup.ec.core.category.converter.poplator.EanPopulator">
-	</bean>
-	
-	
+	</bean>	
 </beans>
