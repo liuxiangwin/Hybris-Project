@@ -34,6 +34,8 @@
         <property name="descripton" type="String"/>
     </bean>
     
+    
+     <!-- ####### Alan DTO Data##### -->	
      <bean class="com.testritegroup.ec.core.category.EanData">
         <property name="code" type="String"/>
         <property name="descripton" type="String"/>
