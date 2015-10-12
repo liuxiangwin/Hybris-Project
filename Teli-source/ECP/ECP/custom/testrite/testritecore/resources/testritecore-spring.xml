@@ -372,4 +372,5 @@
 	<bean id="defaultEanPopulator"
 		class="com.testritegroup.ec.core.category.converter.poplator.EanPopulator">
 	</bean> -->	
+	
 </beans>
