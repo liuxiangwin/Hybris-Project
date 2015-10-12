@@ -25,7 +25,7 @@ import com.testritegroup.ec.core.model.ManafactureModel;
 
 
 /**
- * Accelerator specific variant option data converter implementation.
+ * Alan Liu ProductCustomerPopulator
  */
 public class ProductCustomerPopulator extends ProductPopulator
 //extends ProductPopulator
@@ -71,7 +71,7 @@ public class ProductCustomerPopulator extends ProductPopulator
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * de.hybris.platform.commercefacades.product.converters.populator.ProductPopulator#populate(de.hybris.platform.core
 	 * .model.product.ProductModel, de.hybris.platform.commercefacades.product.data.ProductData)
