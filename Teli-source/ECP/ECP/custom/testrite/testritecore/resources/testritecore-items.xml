@@ -404,6 +404,36 @@
                 </attributes>
             </itemtype>
             
+            
+		    <!-- ####### Extend original Model  ######-->
+			<itemtype code="Product" autocreate="false" generate="false">
+				<description>Extend original Product Model By Alan</description>
+				<attributes>
+				
+				
+					<attribute qualifier="manafacture" type="Manafacture"
+						generate="true">
+						<description>Manafacture model refernce by Alan</description>
+						<modifiers read="true" write="true" optional="true" />
+						<persistence type="property" />
+					</attribute>
+					
+					<attribute qualifier="eanAlan" type="EanAlan"
+						generate="true">
+						<description>EanAlan model refernce by Alan</description>
+						<modifiers read="true" write="true" optional="true" />
+						<persistence type="property" />
+					</attribute>
+					
+		
+				</attributes>
+			</itemtype>
+            
+            
+            
+            
+            
+            
              <itemtype code="Manafacture" autocreate="true" generate="true">
                 <description>Manafacture by Alan Liu</description>
                 <deployment table="ManafactureAlanLiu" typecode="15008"/>
@@ -423,7 +453,7 @@
                 </attributes>
             </itemtype>
 
-			<itemtype code="Ean" autocreate="true" generate="true">
+			<itemtype code="EanAlan" autocreate="true" generate="true">
 				<description>Ean by Alan Liu</description>
 				<deployment table="EanAlanLiu" typecode="15009" />
 				<attributes>
