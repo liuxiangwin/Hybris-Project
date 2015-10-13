@@ -344,6 +344,7 @@
 	</bean>
 	
 	<!--  @@#Convnter propety with populator##@@ -->
+	<bean id="manafactureData" class="com.testritegroup.ec.core.category.ManafactureData" scope="prototype"/>
 	<alias name="defaultManafactureConverter" alias="manafactureConverter" />
 	<bean id="defaultManafactureConverter" parent="abstractPopulatingConverter">
 		<lookup-method name="createTarget" bean="manafactureData" />
@@ -359,6 +360,7 @@
 	</bean>
 	
 	<!--  @@#Convnter propety with populator##@@ -->
+	<bean id="eanData" class="com.testritegroup.ec.core.category.EanData" scope="prototype"/>
 	<alias name="defaultEanConverter" alias="eanConverter" />
 	<bean id="defaultEanConverter" parent="abstractPopulatingConverter">
 		<lookup-method name="createTarget" bean="eanData" />
