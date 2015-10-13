@@ -13,6 +13,8 @@
  */
 package com.testritegroup.ec.core.category.converter.poplator;
 
+
+
 import de.hybris.platform.commercefacades.product.converters.populator.ProductPopulator;
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.core.model.product.ProductModel;
@@ -20,72 +22,65 @@ import de.hybris.platform.servicelayer.dto.converter.Converter;
 
 import com.testritegroup.ec.core.category.EanData;
 import com.testritegroup.ec.core.category.ManafactureData;
-import com.testritegroup.ec.core.model.EanModel;
+import com.testritegroup.ec.core.model.EanAlanModel;
 import com.testritegroup.ec.core.model.ManafactureModel;
 
 
-/**
- * Alan Liu ProductCustomerPopulator
- */
+
 public class ProductFeaturePopulator extends ProductPopulator
 //extends ProductPopulator
 {
 
 	private Converter<ManafactureModel, ManafactureData> manafactureConverter;
 
-	private Converter<EanModel, EanData> eanModelConverter;
+	private Converter<EanAlanModel, EanData> eanModelConverter;
 
-	/**
-	 * @return the manafactureConverter
-	 */
+	@Override
+	public void populate(final ProductModel source, final ProductData target)
+	{
+		//super.populate(source, target);
+
+		if (source.getManafacture() != null)
+		{
+			final ManafactureData manafactureData = manafactureConverter.convert(source.getManafacture());
+			target.setManufacturer(manafactureData.getName());
+		}
+		else
+		{
+			target.setManufacturer(null);
+		}
+
+		if (source.getEan() != null)
+		{
+			final EanData eanData = eanModelConverter.convert(source.getEanAlan());
+			target.setSummary(eanData.getDescripton());
+		}
+		else
+		{
+			target.setSummary(null);
+		}
+
+	}
+
 	public Converter<ManafactureModel, ManafactureData> getManafactureConverter()
 	{
 		return manafactureConverter;
 	}
 
-	/**
-	 * @param manafactureConverter
-	 *           the manafactureConverter to set
-	 */
+
 	public void setManafactureConverter(final Converter<ManafactureModel, ManafactureData> manafactureConverter)
 	{
 		this.manafactureConverter = manafactureConverter;
 	}
 
-	/**
-	 * @return the eanModelConverter
-	 */
-	public Converter<EanModel, EanData> getEanModelConverter()
+
+	public Converter<EanAlanModel, EanData> getEanModelConverter()
 	{
 		return eanModelConverter;
 	}
 
-	/**
-	 * @param eanModelConverter
-	 *           the eanModelConverter to set
-	 */
-	public void setEanModelConverter(final Converter<EanModel, EanData> eanModelConverter)
+	public void setEanModelConverter(final Converter<EanAlanModel, EanData> eanModelConverter)
 	{
 		this.eanModelConverter = eanModelConverter;
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * de.hybris.platform.commercefacades.product.converters.populator.ProductPopulator#populate(de.hybris.platform.core
-	 * .model.product.ProductModel, de.hybris.platform.commercefacades.product.data.ProductData)
-	 */
-	@Override
-	public void populate(final ProductModel source, final ProductData target)
-	{
-		// YTODO Auto-generated method stub
-		//super.populate(source, target);
-	}
-
-
-
-
-
-
 }
