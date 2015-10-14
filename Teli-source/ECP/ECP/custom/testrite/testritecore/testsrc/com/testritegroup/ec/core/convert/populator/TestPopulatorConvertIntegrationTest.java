@@ -106,8 +106,6 @@ public class TestPopulatorConvertIntegrationTest extends ServicelayerTransaction
 		final String summary = target.getSummary();
 		Assert.assertNotNull(manufacture);
 		Assert.assertNotNull(summary);
-
-		//assertEquals(target.getInvoice().getInvoicedCategory(), InvoiceCategory.FOOD.getCode());
 	}
 
 
