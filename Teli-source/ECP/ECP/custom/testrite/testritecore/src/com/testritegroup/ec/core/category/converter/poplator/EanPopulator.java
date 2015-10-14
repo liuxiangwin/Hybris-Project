@@ -34,7 +34,7 @@ public class EanPopulator<SOURCE extends EanAlanModel, TARGET extends EanData> i
 			final String eanDesc = source.getEanDesc() == null ? null : source.getEanDesc();
 			final String modify = eanDesc + "EanPopulator modify";
 			target.setDescripton(modify);
-			target.setDescripton("### EanPopulator logic###");
+			target.setDescripton(modify + "### EanPopulator logic###");
 		}
 	}
 }

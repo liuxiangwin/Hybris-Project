@@ -50,7 +50,7 @@ public class ProductFeaturePopulator extends ProductPopulator
 			target.setManufacturer(null);
 		}
 
-		if (source.getEan() != null)
+		if (source.getEanAlan() != null)
 		{
 			final EanData eanData = eanModelConverter.convert(source.getEanAlan());
 			target.setSummary(eanData.getDescripton());
