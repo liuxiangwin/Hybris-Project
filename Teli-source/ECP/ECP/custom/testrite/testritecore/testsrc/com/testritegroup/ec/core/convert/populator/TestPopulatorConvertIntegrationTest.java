@@ -49,7 +49,7 @@ public class TestPopulatorConvertIntegrationTest extends ServicelayerTransaction
 
 	private static final String code = "Test--Populator-Convert";
 
-	private static final String manaufacture = "Sap-Manaufacture";
+	private static final String manaufacture = "Sap-Manaufacture-name";
 
 	private static final String ean = "Hybris-suite";
 
@@ -82,9 +82,6 @@ public class TestPopulatorConvertIntegrationTest extends ServicelayerTransaction
 		eanAlanModel = new EanAlanModel();
 		eanAlanModel.setEanDesc(ean, Locale.ENGLISH);
 		modelService.attach(eanAlanModel);
-
-
-
 	}
 
 	@Test
