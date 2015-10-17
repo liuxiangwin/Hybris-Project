@@ -9,7 +9,12 @@ import com.testritegroup.ec.core.category.ManafactureData;
 import com.testritegroup.ec.core.model.ManafactureModel;
 
 
-
+/**
+ * I318407 Alan Liu
+ *
+ * @param <SOURCE>
+ * @param <TARGET>
+ */
 public class ManafacturePopulator<SOURCE extends ManafactureModel, TARGET extends ManafactureData> implements
 		Populator<ManafactureModel, ManafactureData>
 //extends ProductPopulator
