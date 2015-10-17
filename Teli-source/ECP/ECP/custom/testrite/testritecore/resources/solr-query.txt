@@ -1,0 +1,45 @@
+﻿http://powertools.local:9511/yb2bacceleratorstorefront/powertools/zh/USD/search/autocomplete/SearchBox
+
+
+http://powertools.local:9511/yb2bacceleratorstorefront/powertools/zh/USD/search/?text=bosch
+
+
+ q=(ean_string:(skil*^100.0 OR skil^200.0)) 
+OR (code_string:(skil^180.0 OR skil*^90.0)) 
+OR (name_text_zh:(skil^100.0 OR skil*^50.0 OR skil~^25.0))
+ OR (manufacturerName_text:(skil~^20.0 OR skil^80.0 OR skil*^40.0)) 
+OR (keywords_text_zh:(skil~^10.0 OR skil^40.0 OR skil*^20.0)) 
+OR (categoryName_text_zh_mv:(skil*^10.0 OR skil^20.0 OR skil~^5.0))
+&spellcheck=true
+&spellcheck.dictionary=zh
+&spellcheck.collate=true
+&spellcheck.q=skil
+&defType=edismax
+&bq=&fq=(((catalogId:"powertoolsProductCatalog") AND (catalogVersion:Online)))
+&start=0
+&rows=20
+&facet=true
+&facet.field=fit_string_mv
+&facet.field=size_string_mv&facet.field={!ex=fk1}Colour of product, 1766_zh_string&facet.field=allCategories_string_mv&facet.field=brand_string_mv&facet.field={!ex=fk7}price_usd_string&facet.field={!ex=fk6}allPromotions_string_mv&facet.field=color_string_mv&facet.field=categoryPath_string_mv&facet.field={!ex=fk10}availableInStores_string_mv&facet.field=category_string_mv&sort=score desc,inStockFlag_boolean desc,score desc&facet.mincount=1&facet.limit=500&facet.sort=count
+
+
+
+
+
+http://localhost:9511/solrfacetsearch/master_powertools_Product/select?defType=edismax&q=name_text_en:Power Drills&fq=((catalogId:"powertoolsProductCatalog") AND (catalogVersion:Online))&sort=inStockFlag_boolean desc&fl=id,name_text_en&start=0&rows=2&facet=true
+
+######## ManufactureName########
+http://localhost:9511/solrfacetsearch/master_powertools_Product/select?defType=edismax&q=manufacturerName_text:Black&fq=((catalogId:"powertoolsProductCatalog") AND (catalogVersion:Online))&sort=inStockFlag_boolean desc&fl=id,name_text_en&start=0&rows=10&facet=true&facet.field=brand_string_mv&facet.mincount=1&facet.sort=count
+
+#########BrandName##########################
+http://localhost:9511/solrfacetsearch/master_powertools_Product/select?defType=edismax&q=brandName_text:BOSCH&fq=((catalogId:"powertoolsProductCatalog") AND (catalogVersion:Online))&sort=inStockFlag_boolean desc&fl=id,name_text_en&start=0&rows=2&facet=true&facet.field=brand_string_mv&facet.mincount=1&facet.sort=count
+
+#########***##########################
+http://localhost:9511/solrfacetsearch/master_electronics_Product/select?defType=edismax&q=name_text_en:cameras&fq=((catalogId:"electronicsProductCatalog") AND (catalogVersion:Online))&sort=inStockFlag_boolean desc&fl=id,name_text_en&start=0&rows=2&facet=true&facet.field=brand_string_mv&facet.mincount=1&facet.sort=count
+
+
+
+
+
+
+
