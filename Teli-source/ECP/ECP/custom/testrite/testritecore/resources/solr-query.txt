@@ -34,7 +34,7 @@ http://localhost:9511/solrfacetsearch/master_powertools_Product/select?defType=e
 #########BrandName##########################
 http://localhost:9511/solrfacetsearch/master_powertools_Product/select?defType=edismax&q=brandName_text:BOSCH&fq=((catalogId:"powertoolsProductCatalog") AND (catalogVersion:Online))&sort=inStockFlag_boolean desc&fl=id,name_text_en&start=0&rows=2&facet=true&facet.field=brand_string_mv&facet.mincount=1&facet.sort=count
 
-#########***##########################
+#########***test##########################
 http://localhost:9511/solrfacetsearch/master_electronics_Product/select?defType=edismax&q=name_text_en:cameras&fq=((catalogId:"electronicsProductCatalog") AND (catalogVersion:Online))&sort=inStockFlag_boolean desc&fl=id,name_text_en&start=0&rows=2&facet=true&facet.field=brand_string_mv&facet.mincount=1&facet.sort=count
 
 
