@@ -10,7 +10,7 @@ import com.testritegroup.ec.core.model.ManafactureModel;
 
 
 /**
- * I318407 Alan Liu
+ * Alan Liu
  *
  * @param <SOURCE>
  * @param <TARGET>
