@@ -12,8 +12,8 @@ import com.testritegroup.ec.core.model.ManafactureModel;
 /**
  * Alan Liu
  *
- * @param <SOURCE>
- * @param <TARGET>
+ * @param
+ * @param
  */
 public class ManafacturePopulator<SOURCE extends ManafactureModel, TARGET extends ManafactureData> implements
 		Populator<ManafactureModel, ManafactureData>
