@@ -276,36 +276,36 @@
                 <attributes>
                     <attribute qualifier="backendInfo" type="ECPBackendInformation">
                         <description>Contain backend (ERP) information that mostly read-only</description>
-                        <modifiers read="true" write="true" optional="false"/>
+                        <modifiers read="true" write="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
                     <attribute qualifier="allowVendorDelivery" type="java.lang.Boolean">
                         <description>Enable delivery directly from vendor/manufacturer</description>
-                        <modifiers read="true" write="true" optional="false"/>
+                        <modifiers read="true" write="true" optional="true"/>
                         <defaultvalue>Boolean.FALSE</defaultvalue>
                         <persistence type="property"/>    
                     </attribute>
                     <attribute qualifier="allowIslandDelivery" type="java.lang.Boolean">
                         <description>Enable delivery to suburb areas</description>
-                        <modifiers read="true" write="true" optional="false"/>
+                        <modifiers read="true" write="true" optional="true"/>
                         <defaultvalue>Boolean.FALSE</defaultvalue>
                         <persistence type="property"/>    
                     </attribute>
                     <attribute qualifier="allowHomeDelivery" type="java.lang.Boolean">
                         <description>Enable delivery using courier</description>
-                        <modifiers read="true" write="true" optional="false"/>
+                        <modifiers read="true" write="true" optional="true"/>
                         <defaultvalue>Boolean.FALSE</defaultvalue>
                         <persistence type="property"/>    
                     </attribute>
                     <attribute qualifier="allowStorePickup" type="java.lang.Boolean">
                         <description>Enable pickup in store option</description>
-                        <modifiers read="true" write="true" optional="false"/>
+                        <modifiers read="true" write="true" optional="true"/>
                         <defaultvalue>Boolean.FALSE</defaultvalue>
                         <persistence type="property"/>    
                     </attribute>
                     <attribute qualifier="allowOnlineSell" type="java.lang.Boolean">
                         <description>Forcing product available for online sales</description>
-                        <modifiers read="true" write="true" optional="false"/>
+                        <modifiers read="true" write="true" optional="true"/>
                         <defaultvalue>Boolean.FALSE</defaultvalue>
                         <persistence type="property"/>    
                     </attribute>
@@ -319,7 +319,7 @@
                     </attribute>
                     <attribute qualifier="weight" type="java.lang.Double">
                         <modifiers read="true" write="true" optional="true"/>
-                        <defaultvalue>0</defaultvalue>
+                        <defaultvalue>0.0d</defaultvalue>
                         <persistence type="property"/>
                     </attribute>
                     <attribute qualifier="countryOfOrigin" type="Country">
@@ -423,15 +423,9 @@
 						<description>EanAlan model refernce by Alan</description>
 						<modifiers read="true" write="true" optional="true" />
 						<persistence type="property" />
-					</attribute>
-					
-		
+					</attribute>		
 				</attributes>
-			</itemtype>
-            
-            
-            
-            
+			</itemtype>   
             
             
              <itemtype code="Manafacture" autocreate="true" generate="true">
